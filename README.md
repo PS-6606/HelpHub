@@ -46,7 +46,7 @@ HelpHub is designed with modular, reusable components and a Clean Architecture a
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/helphub.git
+   git clone https://github.com/PS-6606/helphub.git
    ```
 
 2. Navigate to the project:
@@ -88,7 +88,3 @@ HelpHub is designed with modular, reusable components and a Clean Architecture a
 ## 👨‍💻 Project Status
 
 Development status: Update this section to reflect the current implementation.
-
-## 📄 License
-
-Add your chosen license here if you intend to distribute the project under an open-source license.
