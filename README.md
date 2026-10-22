@@ -69,7 +69,13 @@ HelpHub is designed with modular, reusable components and a Clean Architecture a
 
 ## 📸 Screenshots
 
-Add application screenshots in the `screenshots/` directory and display them here.
+<img width="501" height="745" alt="Screenshot 2026-10-22 214427" src="https://github.com/user-attachments/assets/90bc55d4-9c8d-4653-b247-be789233abab" />
+<img width="485" height="847" alt="Screenshot 2026-10-22 214334" src="https://github.com/user-attachments/assets/16546a34-0507-422f-8cf1-6301bd485be0" />
+<img width="488" height="848" alt="Screenshot 2026-10-22 214308" src="https://github.com/user-attachments/assets/6e1e8dfd-1354-4627-ad8e-bb597b75a715" />
+<img width="485" height="847" alt="Screenshot 2026-10-22 214223" src="https://github.com/user-attachments/assets/f7bcc98c-bc18-44ee-8341-c9639fbaaabc" />
+<img width="498" height="857" alt="Screenshot 2026-10-22 214213" src="https://github.com/user-attachments/assets/edf43fe6-3bd1-4305-9f39-0d74aa493757" />
+<img width="476" height="850" alt="Screenshot 2026-10-22 214150" src="https://github.com/user-attachments/assets/465addc6-c96e-469e-8f67-f1238e917e3b" />
+
 
 ## 🔮 Future Enhancements
 
