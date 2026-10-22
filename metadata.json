@@ -1,0 +1,6 @@
+{
+  "name": "HelpHub",
+  "description": "A mobile and responsive platform connecting passionate volunteers with impactful organizations to discover, register for, and manage volunteering events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

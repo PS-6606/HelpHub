@@ -1,0 +1,372 @@
+import { Certificate, EventItem, NotificationItem, OrganizationUser, Registration, VolunteerUser } from '../types';
+
+export const initialVolunteerUser: VolunteerUser = {
+  id: 'vol-rahul-01',
+  name: 'Rahul Sharma',
+  email: 'rahul.sharma@example.com',
+  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul',
+  phone: '+91 98765 43210',
+  location: 'Bengaluru, India',
+  bio: 'Software engineer by day, passionate nature conservationist and teaching volunteer on weekends. Believe in driving real grassroots impact.',
+  skills: ['Teaching & Mentoring', 'Tree Plantation', 'Event Coordination', 'First Aid', 'Digital Literacy'],
+  hoursLogged: 34,
+  eventsCompleted: 6,
+  badges: [
+    { id: 'b1', title: 'Community Hero', icon: 'Award', description: 'Completed 5+ community volunteering drives' },
+    { id: 'b2', title: 'Eco Guardian', icon: 'Leaf', description: 'Participated in 3 tree plantation & cleanup projects' },
+    { id: 'b3', title: 'Punctual Achiever', icon: 'CheckCircle', description: '100% attendance rate for approved events' }
+  ]
+};
+
+export const initialOrganizations: OrganizationUser[] = [
+  {
+    id: 'org-green-future',
+    name: 'Green Future Foundation',
+    logo: 'https://api.dicebear.com/7.x/identicon/svg?seed=GreenFuture',
+    category: 'Environment',
+    email: 'contact@greenfuture.ngo',
+    phone: '+91 80 4455 6677',
+    location: 'Bengaluru, India',
+    mission: 'Committed to urban reforesting, lake restoration, and sustainable municipal waste elimination across South India.',
+    verified: true,
+    totalEventsCreated: 14
+  },
+  {
+    id: 'org-pratham-shiksha',
+    name: 'Pratham Shiksha Initiative',
+    logo: 'https://api.dicebear.com/7.x/identicon/svg?seed=PrathamShiksha',
+    category: 'Education',
+    email: 'info@prathamshiksha.org',
+    phone: '+91 11 2345 6789',
+    location: 'Delhi & NCR, India',
+    mission: 'Bridging the digital divide and offering foundational literacy and STEM mentorship to underprivileged students.',
+    verified: true,
+    totalEventsCreated: 9
+  },
+  {
+    id: 'org-sankalp-animal',
+    name: 'Sankalp Animal Rescue',
+    logo: 'https://api.dicebear.com/7.x/identicon/svg?seed=SankalpAnimal',
+    category: 'Animal Welfare',
+    email: 'help@sankalpanimal.org',
+    phone: '+91 22 9988 7766',
+    location: 'Mumbai, India',
+    mission: 'Shelter, medical care, immunization, and ethical adoption for distressed urban community animals.',
+    verified: true,
+    totalEventsCreated: 11
+  }
+];
+
+export const initialEvents: EventItem[] = [
+  {
+    id: 'evt-001',
+    title: 'Tree Plantation & Urban Forest Drive',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    description: 'Join hands with Green Future Foundation to plant over 500 indigenous saplings in Cubbon Park and surrounding green belts. Tools, saplings, gloves, and expert guidance provided. Help us enhance the green cover of Bengaluru!',
+    category: 'Environment',
+    date: '2026-10-25',
+    time: '07:30 AM - 11:30 AM',
+    locationType: 'in-person',
+    locationAddress: 'Cubbon Park, Gate 4 (Opposite High Court)',
+    city: 'Bengaluru',
+    requiredVolunteers: 30,
+    registeredCount: 22,
+    status: 'upcoming',
+    skillsRequired: ['Physical stamina', 'Gardening interest', 'Teamwork'],
+    perks: ['Certificate of Participation', 'Free Refreshments & Snacks', 'Volunteer T-Shirt', 'Sapling to take home'],
+    urgency: 'normal',
+    createdAt: '2026-10-15'
+  },
+  {
+    id: 'evt-002',
+    title: 'Weekend STEM & Coding Mentorship for Kids',
+    orgId: 'org-pratham-shiksha',
+    orgName: 'Pratham Shiksha Initiative',
+    description: 'Mentor bright middle school students from government schools in basic algorithmic thinking, Scratch programming, and science experiments. Volunteers will lead small groups of 4-5 children each.',
+    category: 'Education',
+    date: '2026-10-26',
+    time: '09:30 AM - 01:30 PM',
+    locationType: 'in-person',
+    locationAddress: 'Community Center, Sector 14, Koramangala',
+    city: 'Bengaluru',
+    requiredVolunteers: 15,
+    registeredCount: 12,
+    status: 'upcoming',
+    skillsRequired: ['Basic Coding / STEM', 'Patience & Teaching', 'English/Kannada/Hindi'],
+    perks: ['Verified Digital Certificate', 'Teaching Guidebook', 'Lunch Provided'],
+    urgency: 'urgent',
+    createdAt: '2026-10-16'
+  },
+  {
+    id: 'evt-003',
+    title: 'Versova Beach Cleanup & Plastic Audit',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    description: 'Help clear ocean plastic debris from Versova beachfront before tidal influx. Volunteers will sort, weigh, and catalog marine trash to support municipal recycling policy research.',
+    category: 'Environment',
+    date: '2026-10-28',
+    time: '06:30 AM - 09:30 AM',
+    locationType: 'in-person',
+    locationAddress: 'Versova Beach, Juhu Versova Link Rd',
+    city: 'Mumbai',
+    requiredVolunteers: 45,
+    registeredCount: 38,
+    status: 'upcoming',
+    skillsRequired: ['Outdoor cleanup', 'Waste segregation awareness', 'Enthusiasm'],
+    perks: ['Volunteering Certificate', 'Protective Gear & Gloves', 'Hydration & Fruit Snacks'],
+    urgency: 'normal',
+    createdAt: '2026-10-17'
+  },
+  {
+    id: 'evt-004',
+    title: 'Community Animal Vaccination & Foster Camp',
+    orgId: 'org-sankalp-animal',
+    orgName: 'Sankalp Animal Rescue',
+    description: 'Assist our veterinary team during an anti-rabies vaccination campaign and adoption screening drive for rescue pups and kittens. Animal lovers needed for animal handling and adoption registration desk.',
+    category: 'Animal Welfare',
+    date: '2026-11-01',
+    time: '10:00 AM - 03:00 PM',
+    locationType: 'in-person',
+    locationAddress: 'Bandra Animal Welfare Ground, Bandra West',
+    city: 'Mumbai',
+    requiredVolunteers: 20,
+    registeredCount: 14,
+    status: 'upcoming',
+    skillsRequired: ['Animal comfort', 'Crowd guidance', 'Data record keeping'],
+    perks: ['Animal Care Certificate', 'Rescue Volunteer Badge', 'Pet care goodies'],
+    urgency: 'normal',
+    createdAt: '2026-10-18'
+  },
+  {
+    id: 'evt-005',
+    title: 'Elderly Care & Digital Literacy Workshop',
+    orgId: 'org-pratham-shiksha',
+    orgName: 'Pratham Shiksha Initiative',
+    description: 'Spend an afternoon teaching senior citizens how to safely operate smartphones, digital banking apps, WhatsApp video calls, and how to spot online phishing scams.',
+    category: 'Community',
+    date: '2026-11-04',
+    time: '02:00 PM - 05:00 PM',
+    locationType: 'in-person',
+    locationAddress: 'Harmony Senior Living Center, Whitefield',
+    city: 'Bengaluru',
+    requiredVolunteers: 12,
+    registeredCount: 8,
+    status: 'upcoming',
+    skillsRequired: ['Empathy', 'Smartphone literacy', 'Patience'],
+    perks: ['Certificate of Service', 'Tea & Refreshments', 'Community Recognition'],
+    urgency: 'normal',
+    createdAt: '2026-10-19'
+  },
+  {
+    id: 'evt-006',
+    title: 'Disaster Relief Kit Assembly & Ration Packaging',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    description: 'Assemble emergency dry ration packs, clean drinking water pouches, and hygienic supplies for flood-prone regional settlements.',
+    category: 'Disaster Relief',
+    date: '2026-10-20',
+    time: '09:00 AM - 01:00 PM',
+    locationType: 'in-person',
+    locationAddress: 'Warehouse Hub #3, Peenya Industrial Area',
+    city: 'Bengaluru',
+    requiredVolunteers: 25,
+    registeredCount: 25,
+    status: 'completed',
+    skillsRequired: ['Packaging', 'Logistics coordination'],
+    perks: ['Letter of Appreciation', 'Disaster Relief Badge', 'Lunch'],
+    urgency: 'normal',
+    createdAt: '2026-10-10'
+  }
+];
+
+export const initialRegistrations: Registration[] = [
+  {
+    id: 'reg-101',
+    eventId: 'evt-001',
+    eventTitle: 'Tree Plantation & Urban Forest Drive',
+    eventDate: '2026-10-25',
+    eventCity: 'Bengaluru',
+    eventCategory: 'Environment',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    volunteerId: 'vol-rahul-01',
+    volunteerName: 'Rahul Sharma',
+    volunteerEmail: 'rahul.sharma@example.com',
+    volunteerPhone: '+91 98765 43210',
+    volunteerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul',
+    volunteerSkills: ['Tree Plantation', 'Event Coordination'],
+    status: 'approved',
+    appliedAt: '2026-10-16 10:14',
+    notes: 'Excited to contribute! I have participated in 2 earlier plantation drives.',
+    attendedHours: 4
+  },
+  {
+    id: 'reg-102',
+    eventId: 'evt-002',
+    eventTitle: 'Weekend STEM & Coding Mentorship for Kids',
+    eventDate: '2026-10-26',
+    eventCity: 'Bengaluru',
+    eventCategory: 'Education',
+    orgId: 'org-pratham-shiksha',
+    orgName: 'Pratham Shiksha Initiative',
+    volunteerId: 'vol-rahul-01',
+    volunteerName: 'Rahul Sharma',
+    volunteerEmail: 'rahul.sharma@example.com',
+    volunteerPhone: '+91 98765 43210',
+    volunteerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul',
+    volunteerSkills: ['Teaching & Mentoring', 'Basic Coding / STEM'],
+    status: 'pending',
+    appliedAt: '2026-10-18 14:30',
+    notes: 'I am a software engineer and would love to teach Scratch to the kids!'
+  },
+  {
+    id: 'reg-103',
+    eventId: 'evt-006',
+    eventTitle: 'Disaster Relief Kit Assembly & Ration Packaging',
+    eventDate: '2026-10-20',
+    eventCity: 'Bengaluru',
+    eventCategory: 'Disaster Relief',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    volunteerId: 'vol-rahul-01',
+    volunteerName: 'Rahul Sharma',
+    volunteerEmail: 'rahul.sharma@example.com',
+    volunteerPhone: '+91 98765 43210',
+    volunteerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul',
+    volunteerSkills: ['Packaging', 'Logistics coordination'],
+    status: 'completed',
+    appliedAt: '2026-10-11 11:20',
+    notes: 'Available for full morning shift.',
+    attendedHours: 4
+  },
+  {
+    id: 'reg-104',
+    eventId: 'evt-001',
+    eventTitle: 'Tree Plantation & Urban Forest Drive',
+    eventDate: '2026-10-25',
+    eventCity: 'Bengaluru',
+    eventCategory: 'Environment',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    volunteerId: 'vol-priya-02',
+    volunteerName: 'Priya Sundaram',
+    volunteerEmail: 'priya.s@example.com',
+    volunteerPhone: '+91 91234 56789',
+    volunteerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya',
+    volunteerSkills: ['Gardening', 'Social Media', 'Photography'],
+    status: 'pending',
+    appliedAt: '2026-10-19 16:45',
+    notes: 'Can also help capture photos for the foundation social media page!'
+  },
+  {
+    id: 'reg-105',
+    eventId: 'evt-001',
+    eventTitle: 'Tree Plantation & Urban Forest Drive',
+    eventDate: '2026-10-25',
+    eventCity: 'Bengaluru',
+    eventCategory: 'Environment',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    volunteerId: 'vol-ananya-03',
+    volunteerName: 'Ananya Verma',
+    volunteerEmail: 'ananya.v@example.com',
+    volunteerPhone: '+91 98111 22334',
+    volunteerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya',
+    volunteerSkills: ['First Aid', 'Team Coordination'],
+    status: 'approved',
+    appliedAt: '2026-10-17 09:10',
+    notes: 'Certified first-aider, happy to assist the medical station.'
+  },
+  {
+    id: 'reg-106',
+    eventId: 'evt-003',
+    eventTitle: 'Versova Beach Cleanup & Plastic Audit',
+    eventDate: '2026-10-28',
+    eventCity: 'Mumbai',
+    eventCategory: 'Environment',
+    orgId: 'org-green-future',
+    orgName: 'Green Future Foundation',
+    volunteerId: 'vol-karthik-04',
+    volunteerName: 'Karthik Nair',
+    volunteerEmail: 'karthik.n@example.com',
+    volunteerPhone: '+91 94444 55555',
+    volunteerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Karthik',
+    volunteerSkills: ['Waste segregation', 'Athletics'],
+    status: 'pending',
+    appliedAt: '2026-10-20 08:30',
+    notes: 'Joining along with 2 college friends.'
+  }
+];
+
+export const initialCertificates: Certificate[] = [
+  {
+    id: 'cert-2026-001',
+    certificateNumber: 'HH-GF-2026-1006',
+    volunteerId: 'vol-rahul-01',
+    volunteerName: 'Rahul Sharma',
+    eventId: 'evt-006',
+    eventTitle: 'Disaster Relief Kit Assembly & Ration Packaging',
+    orgName: 'Green Future Foundation',
+    issueDate: '2026-10-21',
+    hoursContributed: 4,
+    skillsAcknowledged: ['Emergency Logistics', 'Ration Packaging', 'Community Support'],
+    authorizedSignatory: 'Dr. Arvind Swaminathan (Director, Green Future Foundation)'
+  }
+];
+
+export const initialNotifications: NotificationItem[] = [
+  {
+    id: 'notif-1',
+    roleTarget: 'volunteer',
+    title: 'Registration Approved! 🎉',
+    message: 'Green Future Foundation approved your registration for Tree Plantation & Urban Forest Drive on 25 October.',
+    timestamp: '2 hours ago',
+    read: false,
+    type: 'registration_update',
+    eventId: 'evt-001'
+  },
+  {
+    id: 'notif-2',
+    roleTarget: 'volunteer',
+    title: 'Certificate Issued 📜',
+    message: 'Your official Certificate of Appreciation for Disaster Relief Kit Assembly is ready to view & download.',
+    timestamp: '1 day ago',
+    read: false,
+    type: 'certificate_issued',
+    eventId: 'evt-006'
+  },
+  {
+    id: 'notif-3',
+    roleTarget: 'organization',
+    title: 'New Volunteer Application',
+    message: 'Priya Sundaram applied for Tree Plantation & Urban Forest Drive.',
+    timestamp: '3 hours ago',
+    read: false,
+    type: 'new_applicant',
+    eventId: 'evt-001'
+  },
+  {
+    id: 'notif-4',
+    roleTarget: 'organization',
+    title: 'High Capacity Alert',
+    message: 'Versova Beach Cleanup is at 84% volunteer capacity (38/45 registered).',
+    timestamp: '5 hours ago',
+    read: true,
+    type: 'system',
+    eventId: 'evt-003'
+  }
+];
+
+export const ALL_CATEGORIES = [
+  'All',
+  'Environment',
+  'Education',
+  'Healthcare',
+  'Community',
+  'Animal Welfare',
+  'Disaster Relief',
+  'Hunger & Food Rescue'
+] as const;
+
+export const POPULAR_CITIES = ['All Cities', 'Bengaluru', 'Mumbai', 'Delhi', 'Hyderabad', 'Pune', 'Remote'] as const;
